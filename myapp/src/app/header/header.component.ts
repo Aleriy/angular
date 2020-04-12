@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public user;
+  public user = {
+      name: 'John'
+    };
+  public users = [
+    {name: 'John'},
+    {name: 'Bob'},
+    {name: 'Alice'}
+  ]
   public myclass = 'red';
   public mycolor = 'green';
+  public isShown = true;
+
 
   changeColor(color) {
     this.mycolor = color;
@@ -20,6 +29,8 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor() {
+
+    console.log('constructor', this.user);
 
     // setTimeout(() => {
     //   this.mycolor = 'black'
@@ -33,14 +44,15 @@ export class HeaderComponent implements OnInit {
     }, 2000);
 
 
-    setTimeout(() =>{
-      this.user ={
-        name: 'John'
-      };
-    },2000);
+    // setTimeout(() =>{
+    //   this.user ={
+    //     name: 'John'
+    //   };
+    // },2000);
   }
 
   ngOnInit(): void {
+    console.log('ngOnInit', this.user);
   }
 
 }

@@ -8,4 +8,14 @@
 <button (click)="changeColor(colorElement.value)">Change color</button>
 {{random()}}
 
-<app-user-card></app-user-card>
+<button (click)="isShown = !isShown">Toggle</button>
+
+<app-user-card *ngIf="isShown" [user]="user"></app-user-card>
+
+<!-- <button (click)="isShown = false">Hide</button> -->
+
+<ul>
+    <li *ngFor="let user of users">
+        {{user.name}}
+    </li>
+</ul>
