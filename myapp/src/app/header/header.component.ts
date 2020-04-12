@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public user = {
-      name: 'John'
-    };
+        name: 'John'
+      };
   public users = [
     {name: 'John'},
     {name: 'Bob'},
     {name: 'Alice'}
-  ]
+  ];
+  public selectedUser;
   public myclass = 'red';
   public mycolor = 'green';
   public isShown = true;
