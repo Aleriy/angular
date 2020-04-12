@@ -1,0 +1,11 @@
+<p [class]="myclass">Hello,{{user?.name}}!</p>
+<p  (click)="changeColor('purple')" [style.color]="mycolor" >Text</p>
+
+<input type="text" (input)="changeColor($event.target.value)"
+(keydown.control.shift.enter)="changeColor('green')">
+
+<input type="text" #colorElement>
+<button (click)="changeColor(colorElement.value)">Change color</button>
+{{random()}}
+
+<app-user-card></app-user-card>
