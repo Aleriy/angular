@@ -9,6 +9,7 @@ import { ItemComponent } from './header/item/item.component';
 import { ColoryDirective } from './colory.directive';
 import { ItemDirectiveComponent } from './item-directive/item-directive.component';
 import { DelayDirective } from './delay.directive';
+import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,12 @@ import { DelayDirective } from './delay.directive';
     ItemComponent,
     ColoryDirective,
     ItemDirectiveComponent,
-    DelayDirective
+    DelayDirective,
+    DynamicComponentComponent
   ],
+
+  entryComponents : [ DynamicComponentComponent ],
+
   imports: [
     BrowserModule,
     AppRoutingModule
