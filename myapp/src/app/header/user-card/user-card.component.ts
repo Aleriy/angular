@@ -10,7 +10,7 @@ export class UserCardComponent implements OnInit {
   @Input() user;
   @Output() userSeelcted: EventEmitter<any> = new EventEmitter();
 
-  constructor() { 
+  constructor() {
     console.log('constructor:', this.user);
   }
 
