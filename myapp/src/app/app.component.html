@@ -1,8 +1,16 @@
 <app-header></app-header>
 
-<div appColory>
-    appColoryText in the directive
+<app-item-directive appColory>some text in item-directive</app-item-directive>
+
+
+<div *ngFor="let delay of [1,2,3,4,5]">
+    some text in delay directive
+    <app-item *appDelay="delay"></app-item>
 </div>
 
+<div appColory #colory="colory">appColoryText in the directive</div>
 
-<app-item-directive appColory>some text in item-directive</app-item-directive>
+<button (click)="colory.setRandomColor(); colory2.setRandomColor();">change color!</button>
+
+<app-item-directive appColory #colory2="colory">HAHAHA item directive</app-item-directive>
+
