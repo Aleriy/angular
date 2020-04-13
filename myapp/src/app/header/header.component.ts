@@ -6,15 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+
+  title = 'header component public';
   public selectedUser;
   public user = {
-        name: 'John'
-      };
+    name: 'John'
+  };
   public users = [
-    {name: 'John'},
-    {name: 'Bob'},
-    {name: 'Alice'}
+    { name: 'John' },
+    { name: 'Bob' },
+    { name: 'Alice' }
   ];
   public myclass = 'red';
   public mycolor = 'green';
