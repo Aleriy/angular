@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -50,7 +51,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.users = this._userService.getAll();
+   this._userService.getAll().subscribe(users => this.users = users);
     console.log('ngOnInit', this.user);
   }
 
