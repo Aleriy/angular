@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -12,15 +13,10 @@ export class HeaderComponent implements OnInit {
   public user = {
     name: 'John'
   };
-  public users = [
-    { name: 'John' },
-    { name: 'Bob' },
-    { name: 'Alice' }
-  ];
+  public users;
   public myclass = 'red';
   public mycolor = 'green';
   public isShown = true;
-
 
   changeColor(color) {
     this.mycolor = color;
@@ -30,8 +26,8 @@ export class HeaderComponent implements OnInit {
     return Math.random();
   }
 
-  constructor() {
-
+  constructor(private _userService: UserService) {
+  
     console.log('constructor', this.user);
 
     // setTimeout(() => {
@@ -54,6 +50,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.users = this._userService.getAll();
     console.log('ngOnInit', this.user);
   }
 

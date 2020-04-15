@@ -10,6 +10,7 @@ import { ColoryDirective } from './colory.directive';
 import { ItemDirectiveComponent } from './item-directive/item-directive.component';
 import { DelayDirective } from './delay.directive';
 import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DynamicComponentComponent } from './dynamic-component/dynamic-component
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
