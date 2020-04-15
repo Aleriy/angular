@@ -17,8 +17,12 @@
 <ul>
     <li *ngFor="let user of users">
         <app-user-card [user]="user" (userSeelcted)="selectedUser = user"></app-user-card>
+        <span (click)="removeUser(user.name)">x</span>
     </li>
 </ul>
+
+<input type="text" #userNameElement><button (click)="addUser(userNameElement.value)">Add</button>
+
 <h1>{{selectedUser?.name}}</h1>
 
 <app-item>
